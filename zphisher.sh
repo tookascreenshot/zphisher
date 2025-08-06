@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ##   Zphisher 	: 	Automated Phishing Tool
-##   Author 	: 	TAHMID RAYAT 
+##   Author 	: 	MUZAMIL AHAMD 
 ##   Version 	: 	2.3.5
 ##   Github 	: 	https://github.com/htr-tech/zphisher
 
@@ -204,14 +204,21 @@ check_status() {
 banner() {
 	cat <<- EOF
 		${ORANGE}
-		${ORANGE} ______      _     _     _               
-		${ORANGE}|___  /     | |   (_)   | |              
-		${ORANGE}   / / _ __ | |__  _ ___| |__   ___ _ __ 
-		${ORANGE}  / / | '_ \| '_ \| / __| '_ \ / _ \ '__|
-		${ORANGE} / /__| |_) | | | | \__ \ | | |  __/ |   
-		${ORANGE}/_____| .__/|_| |_|_|___/_| |_|\___|_|   
-		${ORANGE}      | |                                
-		${ORANGE}      |_|                ${RED}Version : ${__version__}
+		${ORANGE}
+  __  __                          _ _  
+ |  \/  |_   _ ______ _ _ __ ___ (_) | 
+ | |\/| | | | |_  / _` | '_ ` _ \| | | 
+ | |  | | |_| |/ / (_| | | | | | | | | 
+ |_|  |_|\__,_/___\__,_|_| |_| |_|_|_| 
+
+						
+		${ORANGE}          
+		${ORANGE}
+		${ORANGE}  
+		${ORANGE} 
+		${ORANGE}
+		${ORANGE}                                
+		${ORANGE}                   ${RED}Version : ${__version__}
 
 		${GREEN}[${WHITE}-${GREEN}]${CYAN} Tool Created by htr-tech (tahmid.rayat)${WHITE}
 	EOF
@@ -221,9 +228,16 @@ banner() {
 banner_small() {
 	cat <<- EOF
 		${BLUE}
-		${BLUE}  ░▀▀█░█▀█░█░█░▀█▀░█▀▀░█░█░█▀▀░█▀▄
-		${BLUE}  ░▄▀░░█▀▀░█▀█░░█░░▀▀█░█▀█░█▀▀░█▀▄
-		${BLUE}  ░▀▀▀░▀░░░▀░▀░▀▀▀░▀▀▀░▀░▀░▀▀▀░▀░▀${WHITE} ${__version__}
+		${BLUE}  
+		${BLUE}  ░
+		${BLUE}  
+  __  __                          _ _  
+ |  \/  |_   _ ______ _ _ __ ___ (_) | 
+ | |\/| | | | |_  / _` | '_ ` _ \| | | 
+ | |  | | |_| |/ / (_| | | | | | | | | 
+ |_|  |_|\__,_/___\__,_|_| |_| |_|_|_| 
+                                       
+					${WHITE} ${__version__}
 	EOF
 }
 
