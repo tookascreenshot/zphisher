@@ -1,0 +1,8 @@
+ __  __  __  __  ____    __    __  __  ____  __     
+(  \/  )(  )(  )(_   )  /__\  (  \/  )(_  _)(  )    
+ )    (  )(__)(  / /_  /(__)\  )    (  _)(_  )(__   
+(_/\/\_)(______)(____)(__)(__)(_/\/\_)(____)(____)  
+
+Advanced Phishing Tool with 30+ Templates
+Created by MUZAMIL
+Educational Purpose Only!
