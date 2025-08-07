@@ -1,0 +1,6 @@
+#!/bin/bash
+# Short command for Muzamil Tool
+# Usage: ./muzamil or bash muzamil
+
+cd "$(dirname "$0")"
+bash muzamil.sh "$@"

