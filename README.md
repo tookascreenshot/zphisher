@@ -154,6 +154,9 @@ $ muzamil
 
 <h3 align="center"><i>:: Workflow ::</i></h3>
 <p align="center">
+<img src=".github/misc/workflow.gif"/>
+</p>
+<p align="center">
 <pre>
  __  __  __  __  ____    __    __  __  ____  __     
 (  \/  )(  )(  )(_   )  /__\  (  \/  )(_  _)(  )    
@@ -161,7 +164,6 @@ $ muzamil
 (_/\/\_)(______)(____)(__)(__)(_/\/\_)(____)(____)  
 </pre>
 </p>
-
 <p align="center">
 <strong>🎬 Animated Banner:</strong> Run <code>./animated-banner.sh</code> for animated version
 </p>
