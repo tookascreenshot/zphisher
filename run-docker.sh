@@ -8,8 +8,8 @@ if [[ ! -d "$BASE_DIR/auth" ]]; then
 	mkdir -p "$BASE_DIR/auth"
 fi
 
-CONTAINER="zphisher"
-IMAGE="htrtech/zphisher:latest"
+CONTAINER="muzamil"
+IMAGE="muzamiltech/muzamil:latest"
 IMG_MIRROR="ghcr.io/muzamil-tech/zphisher:latest"
 MOUNT_LOCATION=${BASE_DIR}/auth
 check_container=$(docker ps --all --format "{{.Names}}")
